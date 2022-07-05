@@ -5,3 +5,7 @@ Ce repository permet de fixer la charte graphique des Implementation Guides dél
 
 # Acronymes
 FIG: Fhir Implementation Guide
+
+
+# About
+This IG has been generated from https://github.com/nriss/ig-template-base
