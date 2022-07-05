@@ -1,4 +1,7 @@
 # ig-template-base
 package-id = fhir.base.template
 
-Base IG template managed by HL7 but usable by anyone (no logos).  The foundation for most HL7-published IGs
+Ce repository permet de fixer la charte graphique des Implementation Guides délivrés par l'ANS.
+
+# Acronymes
+FIG: Fhir Implementation Guide
