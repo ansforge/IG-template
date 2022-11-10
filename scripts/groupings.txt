@@ -28,7 +28,7 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-abstractprofile">
   <name value="Structures: Abstract Profiles"/>
-  <description value="These are profiles on resources or data types that describe patterns used by other profiles, but cannot be instantiated directly.  I.e. instances can conform to profiles *based* on these abstract profiles, but do not declare conformance to the abstract profiles themselves."/>
+  <description value=" Profils sur les ressources ou FHIR data types qui décrivent des patterns utilisés par d'autres profils, mais qui ne peuvent pas être instanciés directement. Par exemple : les instances peuvent être conforme à des profils issus de ces profils abstraits, mais ne peuvent pas se déclarer conforme à ces profils abstraits directement."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-profile">
   <name value="Structures: Resource Profiles"/>
@@ -48,15 +48,15 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-codesystem">
   <name value="Terminology: Code Systems"/>
-  <description value="Thes ressources CodeSystem définissent les ensembles de codes définis par les systèmes conformes à cet Implementation Guide (IG). Equivalent NOS : Terminologie de REference (TRE)."/>
+  <description value="Les ressources CodeSystem définissent les ensembles de codes définis par les systèmes conformes à cet Implementation Guide (IG). Equivalent NOS : Terminologie de REference (TRE)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-namingsystem">
   <name value="Terminology: Naming Systems"/>
-  <description value="These define identifier and/or code system identities used by systems conforming to this implementation guide"/>
+  <description value="Les Naming Systems définissent des identifiants et/ou CodeSystems utilisés par les systèmes conformes à cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-map-structuremap">
   <name value="Terminology: Structure Maps"/>
-  <description value="These define transformations to convert between data structures used by systems conforming to this implementation guide"/>
+  <description value="Les StructureMap définissent les transformations de conversion entre les structures de données utilisés par les systèmes conformes à cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-map-conceptmap">
   <name value="Terminology: Concept Maps"/>
@@ -68,19 +68,20 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-plandefinition">
   <name value="Knowledge Artifacts: Plan Definitions"/>
-  <description value="These define workflows, rules, strategies, or protocols as part of content in this implementation guide"/>
+  <description value="Les workflows, règles, stratégies, ou protocoles définies par cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-library">
   <name value="Knowledge Artifacts: Libraries"/>
-  <description value="These define logic, asset collections and other libraries as part of content in this implementation guide"/>
+  <description value="Logiques, collections et autres librairies définies par cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-measure">
   <name value="Knowledge Artifacts: Measure"/>
-  <description value="Tese define measures as part of content in this implementation guide"/>
+  <description value="Définition des mesures définies dans cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-examplescenario">
   <name value="Example: Example Scenarios"/>
-  <description value="These define groups of interrelated examples that demonstrate one or more of the workflows supported by this implementation guide"/>
+  <description value="Les scénarios définissent les groupes d'exemples interconnectés qui démontrent u
+  These define groups of interrelated examples that demonstrate one or more of the workflows supported by this implementation guide"/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-example">
   <name value="Example: Example Instances"/>
