@@ -1,6 +1,6 @@
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-capabilitystatement">
   <name value="Behavior: Capability Statements"/>
-  <description value="La ressource CapabilityStatement permet de définir les capacités spécifiques que différents systèmes doivent supporter pour être conforme à cet Implementation Guide (IG). Les systèmes conformes à cet IG doivent déclarer leur conformance à au moins une de ces ressources CapabilityStatement."/>
+  <description value="La ressource CapabilityStatement permet de définir les capacités spécifiques que les systèmes doivent supporter pour être conforme à cet Implementation Guide (IG). Les systèmes conformes à cet IG doivent déclarer leur conformance à au moins une de ces ressources CapabilityStatement."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-operationdefinition">
   <name value="Behavior: Operation Definitions"/>
@@ -8,15 +8,15 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-messagedefinition">
   <name value="Behavior: Message Definitions"/>
-  <description value="Les comportements de type Message Definition définissent le tye de messages qui peuvent être envoyés et/ou reçus par les systèmes conformes à cet Implementation Guide (IG)."/>
+  <description value="Les comportements de type Message Definition définissent le type de messages qui peuvent être envoyés et/ou reçus par les systèmes conformes à cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-searchparameter">
   <name value="Behavior: Search Parameters"/>
-  <description value="La ressource SearchParameter permet de définir de nouveaux paramètres de recherches pour les serveurs RESTful. Ces paramètres de recherche peuvent également être utilisés pour trier ou inclure des ressources reliées."/>
+  <description value="La ressource SearchParameter permet de définir de nouveaux paramètres de recherche pour les serveurs RESTful. Ces paramètres de recherche peuvent également être utilisés pour trier ou inclure des ressources reliées."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-graphdefinition">
   <name value="Structures: Graph Definitions"/>
-  <description value="Définition de collections de ressources interdépendantes inter of interrelated resources that are useful to pass around as a group"/>
+  <description value="Définition de collections de ressources interdépendantes."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-logicalmodel">
   <name value="Structures: Logical Models"/>
@@ -24,11 +24,11 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-questionnaire">
   <name value="Structures: Questionnaires"/>
-  <description value="Les questionnaires définisent les formulaires utilisés ou exposés par les systèmes conformes à cet Implementation Guide (IG)."/>
+  <description value="Les questionnaires définissent les formulaires utilisés ou exposés par les systèmes conformes à cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-abstractprofile">
   <name value="Structures: Abstract Profiles"/>
-  <description value=" Profils sur les ressources ou FHIR data types qui décrivent des patterns utilisés par d'autres profils, mais qui ne peuvent pas être instanciés directement. Par exemple : les instances peuvent être conforme à des profils issus de ces profils abstraits, mais ne peuvent pas se déclarer conforme à ces profils abstraits directement."/>
+  <description value="Profils sur les ressources ou types de données FHIR qui décrivent des modèles utilisés par d'autres profils, mais qui ne peuvent pas être instanciés directement. Par exemple, les instances peuvent être conformes à des profils issus de ces profils abstraits, mais ne peuvent pas se déclarer conforme à ces profils abstraits directement."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-profile">
   <name value="Structures: Resource Profiles"/>
@@ -36,7 +36,7 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-datatype">
   <name value="Structures: Data Type Profiles"/>
-  <description value="Ces structures définissent les contraintes sur les FHIR data types par les systèmes conformes à cet Implementation Guide (IG)."/>
+  <description value="Ces structures définissent les contraintes sur les types de données FHIR par les systèmes conformes à cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-extension">
   <name value="Structures: Extension Definitions"/>
@@ -52,11 +52,11 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-namingsystem">
   <name value="Terminology: Naming Systems"/>
-  <description value="Les Naming Systems définissent des identifiants et/ou CodeSystems utilisés par les systèmes conformes à cet Implementation Guide (IG)."/>
+  <description value="Les Naming System définissent les identités des CodeSystem ou Identifier utilisés par les systèmes conformes à cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-map-structuremap">
   <name value="Terminology: Structure Maps"/>
-  <description value="Les StructureMap définissent les transformations de conversion entre les structures de données utilisés par les systèmes conformes à cet Implementation Guide (IG)."/>
+  <description value="Les StructureMap définissent les transformations de conversion entre des structures de données utilisées par les systèmes conformes à cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-map-conceptmap">
   <name value="Terminology: Concept Maps"/>
@@ -64,7 +64,7 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-activitydefinition">
   <name value="Knowledge Artifacts: Activity Definitions"/>
-  <description value="These define activities that can be performed as part of content in this implementation guide"/>
+  <description value="Les ActivityDefinition définissent les activités définies par cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-plandefinition">
   <name value="Knowledge Artifacts: Plan Definitions"/>
@@ -80,12 +80,11 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-examplescenario">
   <name value="Example: Example Scenarios"/>
-  <description value="Les scénarios définissent les groupes d'exemples interconnectés qui démontrent u
-  These define groups of interrelated examples that demonstrate one or more of the workflows supported by this implementation guide"/>
+  <description value="Les scénarios définissent les groupes d'exemples interconnectés qui illustrent les workflows supportés par cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-example">
   <name value="Example: Example Instances"/>
-  <description value="Ces exemples dévoilent à quoi les données produites et consommées par les systèmes conformes à cet Implementation Guide (IG) doivent ressembler."/>
+  <description value="Ces exemples dévoilent à quoi doivent ressembler les données produites et consommées par les systèmes conformes à cet Implementation Guide (IG)."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-other">
   <name value="Other"/>
