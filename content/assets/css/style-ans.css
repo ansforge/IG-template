@@ -5449,9 +5449,6 @@ a.btn--style1:after {
 a.btn--style1.btn--white {
     background-color: #fff;
 }
-.table-responsive {
-    margin-bottom: 3rem;
-}
 .table {
     border-collapse: separate;
     border-radius: 1.4rem;
