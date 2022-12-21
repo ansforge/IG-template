@@ -11,4 +11,4 @@ FIG: FHIR Implementation Guide
 
 
 # About
-This IG has been generated from https://github.com/HL7/ig-template-base
+Cette page a été générée à partir de https://github.com/HL7/ig-template-base
