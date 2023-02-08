@@ -1,3 +1,17 @@
+<grouping xmlns="http://hl7.org/fhir" id="-req-actordefinition">
+  <name value="Requirements: Actor Definitions"/>
+  <description value="The following artifacts define the types of individuals and/or systems that will interact as part of the use cases covered by this implementation guide."/>
+</grouping>
+<grouping xmlns="http://hl7.org/fhir" id="-req-g">
+  <name value="Requirements: Formal Requirements"/>
+  <description value="The following artifacts describe the specific requirements to be met by systems compliant with the implementation guide."/>
+</grouping>
+<grouping xmlns="http://hl7.org/fhir" id="-test-testscript">
+  <name value="Testing Artifacts: TestScripts"/>
+  <description value="These test definitions are available to FHIR test engines to verify systems are conforming to this implementation guide"/>
+</grouping>
+
+
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-capabilitystatement">
   <name value="Comportement: Capability Statements"/>
   <description value="La ressource CapabilityStatement permet de définir les capacités spécifiques que les systèmes doivent supporter pour être conforme à cet Implementation Guide (IG). Les systèmes conformes à cet IG doivent déclarer leur conformance à au moins une de ces ressources CapabilityStatement."/>
