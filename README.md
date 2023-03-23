@@ -1,5 +1,4 @@
-# ig-template-base
-package-id = fhir.base.template
+# ig-template
 
 Ce repository permet de fixer la charte graphique des Implementation Guides délivrés par l'ANS.
 Il ne permet pas d'être utilisé tel quel et sa modification doit être faite par des experts FHIR.
