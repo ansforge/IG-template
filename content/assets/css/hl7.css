@@ -72,3 +72,11 @@
   color: red;
   font-weight: bold;
 }
+
+#ans-nav {
+  line-height: 50px;
+  float: left;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  color: #808080;
+}
