@@ -114,7 +114,8 @@
   <target name="onGenerate.processIg">
     <xslt in="${onGenerate.ig.source}xml" out="${onGenerate.ig.source}1.xml" style="${ig.scripts}/onGenerate.group.xslt"/>
     <replace file="${onGenerate.ig.source}1.xml" token="&lt;!--TEMPLATE_GROUPS_HERE--&gt;" value="${groupings}"/>
-    <xslt in="${onGenerate.ig.source}1.xml" out="${onGenerate.ig.dest}xml" style="${ig.scripts}/onGenerate.final.xslt"/>
+    <xslt in="${onGenerate.ig.source}1.xml" out="${onGenerate.ig.source}2.xml" style="${ig.scripts}/onGenerate.groupSort.xslt"/>
+    <xslt in="${onGenerate.ig.source}2.xml" out="${onGenerate.ig.dest}xml" style="${ig.scripts}/onGenerate.final.xslt"/>
   </target>
   <target name="onGenerate.processIncludes" depends="onGenerate.setup">
     <copy todir="${dir.temp.includes}">
@@ -124,8 +125,10 @@
   <target name="onGenerate.igQa" depends="onGenerate.processIg">
     <xslt in="${onGenerate.ig.dest}xml" out="${ig.template}/ongenerate-validation-igqa.json" style="${ig.scripts}/onGenerate.qa.xslt"/>
   </target>
-  <target name="onGenerate.artifactList" depends="onGenerate.igQa,onGenerate.setup">
-    <xslt in="${onGenerate.ig.dest}xml" out="${dir.temp.includes}/artifacts.xml" style="${ig.scripts}/createArtifactSummary.xslt"/>
+  <target name="onGenerate.artifactList" depends="onGenerate.checkVersions,onGenerate.igQa,onGenerate.setup">
+    <xslt in="${onGenerate.ig.dest}xml" out="${dir.temp.includes}/artifacts.xml" style="${ig.scripts}/createArtifactSummary.xslt">
+      <param name="globals" expression="${globals}"/>
+    </xslt>
     <fileset id="onGenerate.artifacts.id" dir="${ig.root}">
       <include name="${dir.temp.includes}/artifacts.xml"/>
       <include name="${dir.temp.includes}/*.svg"/>
@@ -139,17 +142,15 @@
       <fileset refid="onGenerate.artifacts.id"/>
     </resources>
     <property name="onGenerate.files" refid="onGenerate.files.id"/>-->
-    <concat destfile="${ig.template}/onGenerate-validation.json" encoding="UTF-8" outputencoding="UTF-8">
-      <header>{"resourceType":"OperationOutcome","issue":[
-      </header>
-      <footer>]}
-      </footer>
+    <echo file="${ig.template}/onGenerate-validation.json" message="{&quot;resourceType&quot;:&quot;OperationOutcome&quot;,&quot;issue&quot;:[&#x0a;"/>
+    <concat destfile="${ig.template}/onGenerate-validation.json" encoding="UTF-8" outputencoding="UTF-8" append="yes">
       <fileset dir="${ig.template}" includes="ongenerate-validation*.json" />
       <filterchain>
         <tailfilter lines="-1" skip="0"/>
 <!--        <tailfilter lines="-1" skip="1"/>-->
       </filterchain>
     </concat>
+    <echo file="${ig.template}/onGenerate-validation.json" message="]}&#x0a;" append="yes"/>
     <replace file="${ig.template}/onGenerate-validation.json" token=",]}" value="]}"/>
   </target>
   <scriptdef name="appendArtifacts" language="javascript" description="Adds additional values to the to the onGenerate.files list">
