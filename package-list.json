@@ -1,8 +1,8 @@
 ﻿{
-  "package-id": "fhir.base.template",
+  "package-id": "ans.base.template",
   "title": "Base template for FHIR IGs",
-  "canonical": "http://fhir.org/templates/fhir.base.template",
-  "introduction": "This is the basic template",
+  "canonical": "https://interop.esante.gouv.fr/templates/fhir.base.template",
+  "introduction": "This is the basic template for ANS",
   "list": [
     {
       "version": "current",
