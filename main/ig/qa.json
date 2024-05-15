@@ -1,9 +1,9 @@
 {
   "url" : "http://fhir.org/templates/fhir.base.template",
-  "package-id" : "fhir.base.template",
-  "ig-ver" : "0.2.2",
-  "date" : "Wed, 15 May, 2024 12:57:49 +0000",
-  "dateISO8601" : "2024-05-15T12:57:49+00:00",
+  "package-id" : "ans.base.template",
+  "ig-ver" : "0.1.0",
+  "date" : "Wed, 15 May, 2024 13:06:40 +0000",
+  "dateISO8601" : "2024-05-15T13:06:40+00:00",
   "version" : "5.0.0",
   "tool" : "5.0.0 (3)"
 }
