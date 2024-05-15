@@ -5,5 +5,9 @@
   "description": "ANS FHIR IG Base Template",
   "author": "https://esante.gouv.fr",
   "canonical": "https://interop.esante.gouv.fr/ig/template",
+  "base" : "fhir.base.template",
+  "dependencies" : {
+    "fhir.base.template" : "current"
+  },
   "version": "0.1.0"
 }
