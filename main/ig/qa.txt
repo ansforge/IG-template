@@ -1,3 +1,3 @@
-url = https://interop.esante.gouv.fr/ig/templates/ans.fr.template
+url = https://interop.esante.gouv.fr/ig/template
 package-id = ans.fr.template
 ig-ver = 0.1.0
