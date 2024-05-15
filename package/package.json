@@ -1,9 +1,9 @@
 ﻿{
-  "name": "fhir.base.template",
+  "name": "ans.base.template",
   "type": "fhir.template",
   "license": "CC0-1.0",
-  "description": "FHIR IG Base Template - foundational for use by anyone",
+  "description": "ANS FHIR IG Base Template",
   "author": "http://hl7.org/fhir",
   "canonical": "http://fhir.org/templates/fhir.base.template",
-  "version": "0.2.2"
+  "version": "0.1.0"
 }
