@@ -4,6 +4,6 @@
   "license": "CC0-1.0",
   "description": "ANS FHIR IG Base Template",
   "author": "https://esante.gouv.fr",
-  "canonical": "https://interop.esante.gouv.fr/ig/templates/ans.fr.template",
+  "canonical": "https://interop.esante.gouv.fr/ig/template",
   "version": "0.1.0"
 }

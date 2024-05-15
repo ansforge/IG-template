@@ -1,7 +1,7 @@
 ﻿{
   "package-id": "ans.fr.template",
   "title": "Base template for ANS IGs",
-  "canonical": "https://interop.esante.gouv.fr/ig/templates/ans.fr.template",
+  "canonical": "https://interop.esante.gouv.fr/ig/template",
   "introduction": "This is the base template for ANS",
   "list": [
     {
@@ -14,7 +14,7 @@
     {
       "version": "0.1.0",
       "desc": "release template",
-      "path": "https://interop.esante.gouv.fr/ig/templates/ans.fr.template/0.1.0",
+      "path": "https://interop.esante.gouv.fr/ig/template/0.1.0",
       "status": "release",
       "sequence": "Publications",
       "current": true,
