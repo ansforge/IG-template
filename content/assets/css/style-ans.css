@@ -302,7 +302,7 @@ a {
 }
 a,
 a:hover {
-    text-decoration: underline;
+   /* text-decoration: underline;*/
 }
 a:hover {
     color: var(--primary, #1d71b8);
