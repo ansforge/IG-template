@@ -125,7 +125,7 @@ video {
     -webkit-padding-before: 0;
     -webkit-padding-after: 0;
     border: 0;
-    font: inherit;
+   /* font: inherit;*/
     margin: 0;
    /* padding: 0;*/
     vertical-align: baseline;
@@ -233,7 +233,7 @@ h6 {
     margin-top: 0;
 }
 p {
-    margin:  0 0 10px;
+    margin:  0 0 4px;
 }
 abbr[data-original-title],
 abbr[title] {
