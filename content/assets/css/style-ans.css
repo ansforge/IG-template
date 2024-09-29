@@ -298,7 +298,7 @@ sup {
 }
 a {
     background-color: transparent;
-    color: var(--body-color, #697097);
+    color: blue;
 }
 a,
 a:hover {
