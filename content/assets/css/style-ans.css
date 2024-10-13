@@ -125,7 +125,6 @@ video {
     -webkit-padding-before: 0;
     -webkit-padding-after: 0;
     border: 0;
-    font: inherit;
     margin: 0;
    /* padding: 0;*/
     vertical-align: baseline;
@@ -171,6 +170,7 @@ select {
 iframe {
     border: 0;
 }
+
 [class*="svg-icon"] {
     stroke-width: 0;
     stroke: currentColor;
@@ -5469,7 +5469,8 @@ a.btn--style1.btn--white {
 }
 .table thead td,
 .table thead th {
-    background-color: #f8f9fb;
+    background-color: #464c6d;
+    color : white;
     border-bottom-width: 0;
 }
 .table caption + tbody tr:first-child td,
@@ -10189,3 +10190,85 @@ a[class*="border"]:hover {
     border-color: var(--gray-700) !important;
 }
 /*# sourceMappingURL=style-ans.css.map */
+.columns-3 {
+  -moz-column-count: 3;
+  -moz-column-gap: 10px;
+  -webkit-column-count: 3;
+  /* -webkit-column-gap: 10px; */
+  /* column-count: 3; */
+  /* column-gap: 10px; */
+}
+ tr[visible='false'],
+.no-result{
+  display:none;
+}
+
+ tr[visible='true']{
+  display:table-row;
+}
+
+.counter{
+  padding:8px; 
+  color:#ccc;
+}
+#terminologit-search-content-valueset-cld.accordion-group {
+    border: none;
+}
+
+
+#terminologit-search-content-valueset-cld.accordion-group {
+    border: none;
+}
+
+
+
+#terminologit-search-content-valueset-cld .accordion-heading .accordion-toggle {
+  display: -webkit-inline-box;
+  padding: 0px;
+  margin-left: 5px;
+  position: absolute;
+  color: var(--btn-text-color);
+}
+
+#orig .accordion-heading .accordion-toggle {
+  display: -webkit-inline-box;
+  padding: 0px;
+  margin-left: 5px;
+  position: absolute;
+  color: var(--btn-text-color);
+}
+
+.accordion-toggle .gg-chevron-down {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  transition: all 0.5s;
+}
+.gg-chevron-down::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  left: 4px;
+  top: 2px
+}
+
+.rotate-toggle.gg-chevron-down {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+table.codes td {
+	font-size : 10px;
+} 

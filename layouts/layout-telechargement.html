@@ -1,0 +1,45 @@
+---
+---
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
+{% include fragment-pagebegin.html %}
+
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  {% include fragment-base-navtabs.html type='{{[type]}}' id='{{[id]}}' active='tel' %}
+
+  <a name="root"> </a>
+  <h2 id="root">{{[type]}}: {{[title]}} - Telechargement</h2>
+  <div id="download" style="">
+    <div class="table-responsive"><table class="grid table table-bordered">
+      <tbody>
+      
+        <tr>
+          <td><a href="#" onclick="window.open('./listFormat/{{[type]}}-{{[id]}}.tabs','_blank')">csv</a> </td>
+          <td> Fichier csv (.tabs)</td>
+        </tr>
+    
+        
+        <tr>
+          <td><a href="#" onclick="window.open('./listFormat/{{[type]}}-{{[id]}}.svs.xml','_blank')">svs</a> </td>
+          <td>  Fichier xml (Sharing Value Sets) </td>
+        </tr>
+        <tr>
+          <td><a href="#" onclick="window.open('./{{[type]}}-{{[id]}}.json','_blank')">fhir</a> </td>
+          <td>  Fichier Fhir Json  </td>
+        </tr>
+        <tr>
+          <td><a href="#" onclick="window.open('./{{[type]}}-{{[id]}} .xml','_blank')">fhir</a> </td>
+          <td>  Fichier Fhir Xml  </td>
+        </tr>		
+        
+      </tbody>
+      </table></div>
+    
+    </div>
+
+</div>
+{% assign includetabscripts = 'true' %}
+{% include fragment-pageend.html %}

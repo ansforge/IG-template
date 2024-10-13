@@ -34,7 +34,15 @@
       "name": "change-history",
       "description": "Resource Change History",
       "isHistory": true
-    }
+    },    
+    {
+      "name": "telechargement",
+      "description": " telechargement"
+    },
+    {
+      "name": "histoire",
+      "description": "histoire"
+    }  
   ],
   "_formats-documentation": "Lists the formats in the order format-specific pages should be generated.  (Note that suppressed formats won't appear, even if listed here.)",
   "formats": [
@@ -143,20 +151,28 @@
       "template-format": "template/layouts/layout-instance-format.html",
       "template-testing": "template/layouts/layout-canonical-testing.html",
       "template-change-history": "template/layouts/layout-changehistory.html",
+      "template-telechargement": "template/layouts/layout-telechargement.html",
+      "template-histoire": "template/layouts/layout-histoire.html",            
       "base": "{{[type]}}-{{[id]}}.html",
       "format": "{{[type]}}-{{[id]}}.{{[fmt]}}.html",
       "testing": "{{[type]}}-{{[id]}}-testing.html",
-      "change-history": "{{[type]}}-{{[id]}}.change.history.html"
+      "change-history": "{{[type]}}-{{[id]}}.change.history.html",
+      "telechargement": "{{[type]}}-{{[id]}}.tel.html",      
+      "histoire": "{{[type]}}-{{[id]}}.histoire.html"          
     },
     "ValueSet": {
       "template-base": "template/layouts/layout-valueset.html",
       "template-format": "template/layouts/layout-instance-format.html",
       "template-testing": "template/layouts/layout-canonical-testing.html",
       "template-change-history": "template/layouts/layout-changehistory.html",
+      "template-telechargement": "template/layouts/layout-telechargement.html",
+      "template-histoire": "template/layouts/layout-histoire.html",      
       "base": "{{[type]}}-{{[id]}}.html",
       "format": "{{[type]}}-{{[id]}}.{{[fmt]}}.html",
       "testing": "{{[type]}}-{{[id]}}-testing.html",
-      "change-history": "{{[type]}}-{{[id]}}.change.history.html"
+      "change-history": "{{[type]}}-{{[id]}}.change.history.html",
+      "telechargement": "{{[type]}}-{{[id]}}.tel.html",      
+      "histoire": "{{[type]}}-{{[id]}}.histoire.html"     
     },
     "ActivityDefinition": {
       "template-base": "template/layouts/layout-canonical.html",
@@ -193,10 +209,12 @@
       "template-format": "template/layouts/layout-instance-format.html",
       "template-testing": "template/layouts/layout-canonical-testing.html",
       "template-change-history": "template/layouts/layout-changehistory.html",
+      "template-histoire": "template/layouts/layout-histoire.html",      
       "base": "{{[type]}}-{{[id]}}.html",
       "format": "{{[type]}}-{{[id]}}.{{[fmt]}}.html",
       "testing": "{{[type]}}-{{[id]}}-testing.html",
-      "change-history": "{{[type]}}-{{[id]}}.change.history.html"
+      "change-history": "{{[type]}}-{{[id]}}.change.history.html",
+      "histoire": "{{[type]}}-{{[id]}}.histoire.html"   
     },
     "ExampleScenario": {
       "template-base": "template/layouts/layout-examplescenario.html",
@@ -273,10 +291,12 @@
       "template-format": "template/layouts/layout-instance-format.html",
       "template-testing": "template/layouts/layout-canonical-testing.html",
       "template-change-history": "template/layouts/layout-changehistory.html",
+      "template-histoire": "template/layouts/layout-histoire.html",      
       "base": "{{[type]}}-{{[id]}}.html",
       "format": "{{[type]}}-{{[id]}}.{{[fmt]}}.html",
       "testing": "{{[type]}}-{{[id]}}-testing.html",
-      "change-history": "{{[type]}}-{{[id]}}.change.history.html"
+      "change-history": "{{[type]}}-{{[id]}}.change.history.html",
+      "histoire": "{{[type]}}-{{[id]}}.histoire.html"   
     },
     "OperationDefinition": {
       "template-base": "template/layouts/layout-canonical.html",
