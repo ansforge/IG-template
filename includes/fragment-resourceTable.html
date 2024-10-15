@@ -7,7 +7,7 @@
       <span class="copy-text">{{site.data.resources[resource_].version}}<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="{{site.data.resources[resource_].url}}|{{site.data.resources[resource_].version}}"/></span>
       </td>
     </tr>
-{% endif %}
+{% endif %} 
     <tr>
 {% capture newJurisdictions %}
 {% for jurisdiction in site.data.resources[resource_].jurisdictions %}
@@ -84,6 +84,24 @@
 {% endif %}
       <td><i>Computable Name</i>: <span style="font-family: monospace;">{{site.data.resources[resource_].name}}</span></td>
     </tr>
+    <tr>
+      <td colspan="3">
+        <i>As active of:</i> {{site.data.resources[resource_].extension.valuePeriod.start}}
+      </td>
+      <td colspan="2">
+        <i>RevisionDate:</i> {{site.data.resources[resource_].date}}
+      </td>      
+    </tr>
+    
+    
+{% if site.data.resources[resource_].identifiers %}
+    <tr>
+      <td colspan="5">
+        <i>Id:</i> {{site.data.resources[resource_].id}}
+      </td>
+    </tr>
+{% endif %}
+    
 {% if site.data.resources[resource_].identifiers %}
     <tr>
       <td colspan="5">
@@ -91,6 +109,8 @@
       </td>
     </tr>
 {% endif %}
+
+    
 {% if site.data.resources[resource_].keywords %}
     <tr>
       <td colspan="5">
