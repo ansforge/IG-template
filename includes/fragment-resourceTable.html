@@ -1,7 +1,3 @@
-{​% sqlToData itemQuery
-  select id,  json_extract(Resources.json,'$.extension[0].valuePeriod.start')  from Resources 
-%}
-
 
   <table class="{{site.data.resources[resource_].status.class}}">
 {% if site.data.resources[resource_].url != nil %}
