@@ -75,7 +75,7 @@ margin : 10px;
     border-collapse: collapse;
 }
 
-.table-hl7v2 > th {
+.table-hl7v2  th {
     font-weight: 600;
     text-align: inherit;
     text-align: -webkit-match-parent;
