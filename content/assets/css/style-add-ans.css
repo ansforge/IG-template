@@ -70,3 +70,13 @@ a, article, aside, audio, body, div, em, fieldset, figcaption, figure, footer, h
 #content > .inner-wrapper, .container > .row > .inner-wrapper {
 margin : 10px;
 }
+
+.table-hl7v2 {
+    border-collapse: collapse;
+}
+
+.table-hl7v2 > th {
+    font-weight: 600;
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+}
