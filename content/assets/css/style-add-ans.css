@@ -84,3 +84,7 @@ margin : 10px;
 .hl7-color{
 	color :#0070C0;
 }
+
+.table-hl7v2 tfoot > tr > td {
+  padding: 4px;
+}
