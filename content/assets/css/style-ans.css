@@ -5469,7 +5469,7 @@ a.btn--style1.btn--white {
 }
 .table thead td,
 .table thead th {
-    background-color: #f8f9fb;
+    background-color: #c2c6cd;
     border-bottom-width: 0;
 }
 .table caption + tbody tr:first-child td,
