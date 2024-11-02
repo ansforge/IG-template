@@ -89,3 +89,9 @@ margin : 10px;
   padding: 4px;
 }
 
+.table-hl7v2 tbody > tr.segment > td {
+  padding: 4px;
+  background-color : #a0a4ac;
+}
+
+
