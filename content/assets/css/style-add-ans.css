@@ -76,7 +76,7 @@ margin : 10px;
 }
 
 .table-hl7v2  th {
-    font-weight: bold;
+    font-weight: 600;
     text-align: inherit;
     text-align: -webkit-match-parent;
 }
