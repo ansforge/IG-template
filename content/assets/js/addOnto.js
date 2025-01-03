@@ -154,7 +154,7 @@ $(document).ready(function(){
     
     
     
-    $('#orig').find('table.codes').each(function(indextable) { 
+    $('#orig').find('table').each(function(indextable) { 
       if($(this).find("tr").length ==1) {
         $(this).parent().hide();
     }
@@ -201,3 +201,12 @@ $(document).ready(function(){
     if($("table.codes").find('tr:eq(0) th:eq(4)').text()=='dateFin')
         $("table.codes tr td:nth-child(5):not(:empty)").parent().children().css("background-color","#E69215");     
     });
+
+    if($("table.codes").find('tr:eq(0) th:eq(5)').text()=='dateFin')
+        $("table.codes tr td:nth-child(6):not(:empty)").parent().children().css("background-color","#E69215");     
+    });
+
+$("#orig").find("code").css("background-color","#464c6d");
+$("#orig").find("code").css("color","white");
+$("#orig").find("code").css("font-weight","bolder");
+$("#orig").find("code").css("font-size","14px");
