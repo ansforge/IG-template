@@ -127,7 +127,7 @@ $(document).ready(function(){
       resultOnto      
       $.ajax({
         type: 'get',
-        url: "https://smt.esante.gouv.fr/fhir//ValueSet/$expand?_format=json&url=" + ($('i:contains("Official URL")').next()).contents().eq(0).text() + "&filter=" + $('#ontoSearch').val(),
+        url: "https://smt.esante.gouv.fr/fhir//ValueSet/" + $('#idValue').val() + "$expand?_format=json&filter=" + $('#ontoSearch').val(),
         contentType: 'application/json',  
         dataType:"json",     
       })
@@ -148,7 +148,7 @@ $(document).ready(function(){
           console.error(err);
         })
         .always(() => {
-          $('#requeteOnto').html("GET https://smt.esante.gouv.fr/fhir//ValueSet/$expand?_format=json&url=" + ($('i:contains("Official URL")').next()).contents().eq(0).text() + "&filter=" + $('#ontoSearch').val());
+          $('#requeteOnto').html("GET https://smt.esante.gouv.fr/fhir/ValueSet/"+ $('#idValue').val()  + "/$expand?_format=json&&filter=" + $('#ontoSearch').val());
         });
     });      
     
