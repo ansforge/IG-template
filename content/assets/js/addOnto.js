@@ -154,7 +154,7 @@ $(document).ready(function(){
     
     
     
-    $('#orig').find('table').each(function(indextable) { 
+    $('#orig').find('table').not(".grid").each(function(indextable) { 
       if($(this).find("tr").length ==1) {
         $(this).parent().hide();
     }
