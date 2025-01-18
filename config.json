@@ -205,7 +205,7 @@
       "change-history": "{{[type]}}-{{[id]}}.change.history.html"
     },
     "ConceptMap": {
-      "template-base": "template/layouts/layout-canonical.html",
+      "template-base": "template/layouts/layout-conceptmap.html",
       "template-format": "template/layouts/layout-instance-format.html",
       "template-testing": "template/layouts/layout-canonical-testing.html",
       "template-change-history": "template/layouts/layout-changehistory.html",
