@@ -104,7 +104,7 @@ $(document).ready(function(){
                             if(Object.values(objPart)[0] == "previousValue")
                                 precedent = Object.values(objPart)[1];                                                
                         });
-                    content = '<tr><td>' + operation +'</td><td>' + chemin +'</td><td> ' + nom+ '</td><td> '+ precedent  +'</td><td>' + valeur  +  '</td></tr>'; 
+                    content = '<tr><td>' + operation +'</td><td>' + chemin +'</td><td> ' + nom+ '</td><td> '+  valeur +'</td><td>' + precedent  +  '</td></tr>'; 
                      $('#histoire'+obj.resource.meta.versionId).append(content);    
                     
     
