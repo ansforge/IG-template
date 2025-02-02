@@ -1,4 +1,57 @@
+var url = new URL($('#newissue').attr('href'));
+url.searchParams.set('title', $('#idValue').val() );
+$('#newissue').attr('href',url)
+
+
+
+
 $(document).ready(function(){
+
+
+  if ( $("#divDemande").length ) {
+ 
+    
+    $.ajax({
+        type: 'get',
+        url: "https://api.github.com/search/issues?q=is:issue " +  $('#idValue').val()  + " repo:ansforge/IG-terminologie-de-sante",
+        contentType: 'application/json',  
+        dataType:"json",     
+      })
+        .done((data) => {
+    
+          if (data.items != null) {   
+            $('#divDemande').html('<div id="demande"><table class="grid table table-bordered"> <thead> <tr> <td> </td> <td>Titre</td>        <td>Auteur</td>        <td>Date</td>    </tr></thead>    <tbody id="idDemande"> </tbody> </table>  </div>	      	      ');
+
+            $.each(data.items, function (i, obj) { 
+            var content = '<tr>' ;
+            content += '<td>'+  obj.state +'</td><td><a  target="_blank"  href="https://github.com/ansforge/IG-terminologie-de-sante/issues/'+ obj.number  +'"> ' + obj.title +'</a></td><td>' + obj.user.login + '</td><td>' + obj.created_at  + '</td>';
+            content += '</tr>';
+            $('#idDemande').append(content);
+            
+            
+          
+
+    
+            });
+    
+         }   
+        })
+        .fail((err) => {
+          console.error(err);
+        })
+        .always(() => {
+          });
+    
+    
+        
+
+
+
+
+
+
+  }
+
 
 
 
