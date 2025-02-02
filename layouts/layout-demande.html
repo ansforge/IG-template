@@ -1,0 +1,24 @@
+---
+---
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
+{% include fragment-pagebegin.html %}
+
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  {% include fragment-base-navtabs.html type='{{[type]}}' id='{{[id]}}' active='histoire' %}
+
+  <a name="root"> </a>
+  <h2 id="root">{{[type]}}: {{[title]}} - Demande</h2>
+  <input type="hidden" id="idValue" value="{{[id]}}"/>
+  <input type="hidden" id="typeValue" value="{{[type]}}"/>	
+  <div id="divDemande" >
+    Pas de demande pour cette ressource
+
+  </div>	
+
+</div>
+{% assign includetabscripts = 'true' %}
+{% include fragment-pageend.html %}
