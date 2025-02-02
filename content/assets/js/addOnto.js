@@ -22,7 +22,7 @@ $(document).ready(function(){
             $('#idHistoire').append(content);
             
             
-            content ='<tr><td colspan="5"><table style="font-size:10px;width:100%" class="table-striped"><tr><tr><td  style="background-color: #697097;color:white">Operation</td><td  style="background-color: #697097;color:white">Chemin</td  style="background-color: #697097;color:white"><td style="background-color: #697097;color:white">Nom</td><td  style="background-color: #697097;color:white">Précédent</td> <td  style="background-color: #697097;color:white">Valeur</td></tr><tbody id="histoire'+ obj.resource.meta.versionId + '"></tbody></tr></table></td></tr>';		
+            content ='<tr><td colspan="5"><table style="font-size:10px;width:100%" class="table-striped"><tr><tr><td  style="background-color: #697097;color:white">Operation</td><td  style="background-color: #697097;color:white">Chemin</td  style="background-color: #697097;color:white"><td style="background-color: #697097;color:white">Nom</td><td  style="background-color: #697097;color:white">Valeur</td> <td  style="background-color: #697097;color:white">Précédent</td></tr><tbody id="histoire'+ obj.resource.meta.versionId + '"></tbody></tr></table></td></tr>';		
             console.log("https://smt.esante.gouv.fr/fhir/" + obj.id  +  "/$diff");   
             $('#idHistoire').append(content);          
                 $.ajax({
