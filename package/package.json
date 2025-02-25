@@ -1,5 +1,6 @@
 ﻿{
   "name": "ans.fr.template",
+  "version": "0.1.0",
   "type": "fhir.template",
   "license": "CC0-1.0",
   "description": "ANS FHIR IG Base Template",
@@ -8,6 +9,5 @@
   "base" : "fhir.base.template",
   "dependencies" : {
     "fhir.base.template" : "current"
-  },
-  "version": "0.1.0"
+  }
 }

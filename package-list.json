@@ -14,10 +14,11 @@
     {
       "version": "0.1.0",
       "desc": "release template",
-      "path": "https://interop.esante.gouv.fr/ig/template/0.1.0",
+      "path": "https://interop.esante.gouv.fr/ig/template",
       "status": "release",
-      "sequence": "Publications",
+      "sequence": "trial-use",
       "current": true,
+      "fhirversion": "4.0.1",
       "date": "2021-09-03"
     }
   ]
