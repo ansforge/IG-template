@@ -1,0 +1,26 @@
+﻿{
+  "package-id": "ans.fr.template",
+  "title": "Base template for ANS IGs",
+  "canonical": "https://interop.esante.gouv.fr/ig/template",
+  "introduction": "This is the base template for ANS",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build (latest in version control)",
+      "path": "https://ansforge.github.io/IG-template/main/ig",
+      "status": "ci-build",
+      "current": true
+    },
+    {
+      "version": "0.1.0",
+      "desc": "release template",
+      "path": "https://interop.esante.gouv.fr/ig/template",
+      "status": "release",
+      "sequence": "trial-use",
+      "current": true,
+      "fhirversion": "4.0.1",
+      "date": "2021-09-03"
+    }
+  ],
+  "category": "National Base"
+}
