@@ -12,12 +12,21 @@
       "current" : true
     },
     {
+      "version" : "0.2.0",
+      "desc" : "release template",
+      "path" : "https://interop.esante.gouv.fr/ig/template/0.2.0",
+      "status" : "release",
+      "sequence" : "Publications",
+      "current" : true,
+      "date" : "2025-03-04"
+    },
+    {
       "version" : "0.1.0",
       "desc" : "release template",
       "path" : "https://interop.esante.gouv.fr/ig/template/0.1.0",
       "status" : "release",
       "sequence" : "Publications",
-      "current" : true,
+      "current" : false,
       "date" : "2025-02-25"
     }
   ]
