@@ -300,7 +300,8 @@ $(document).ready(function(){
 
     if($("table.codes").find('tr:eq(0) th:eq(5)').text()=='dateFin')
         $("table.codes tr td:nth-child(6):not(:empty)").parent().children().css("background-color","#E69215");   
-
+    $("table.codes tr  td:contains(Deprecated)").parent().children().css("background-color","#E69215");   
+  
     $("#orig").find("code").css("background-color","#464c6d");
     $("#orig").find("code").css("color","white");
     $("#orig").find("code").css("font-weight","bolder");
