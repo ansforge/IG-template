@@ -28,13 +28,14 @@
 
   {% include {{[type]}}-{{[id]}}-xref.xhtml %}
 
-  {% include {{[type]}}-{{[id]}}-content.xhtml %}
+  <div id="orig">  
+    {% include {{[type]}}-{{[id]}}-content.xhtml %}
 
-  {% if site.data.resources[resource_].contained != nil %}
-  <h4>Ressources contenues</h4>
-  {% include {{[type]}}-{{[id]}}-contained-index.xhtml %}
-  {% endif %}
-
+    {% if site.data.resources[resource_].contained != nil %}
+    <h4>Ressources contenues</h4>
+    {% include {{[type]}}-{{[id]}}-contained-index.xhtml %}
+    {% endif %}
+  </div>  
   <!-- insert notes if present -->
   {% include fragment-notes.html type='{{[type]}}' id='{{[id]}}' %}
 

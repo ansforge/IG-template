@@ -93,15 +93,18 @@
 </li>
 {% endif %}
 
-{% if include.active == 'demande' %}
-<li class="active">
-  <a href="#">Demande</a>
-</li>
-{% else %}
-<li>
-  <a href="{{include.type}}-{{include.id}}.demande.html">Demande</a>
-</li>
+{% if include.type =="CodeSystem" or include.type =="ValueSet" or   include.type =="ConceptMap"  %}
+  {% if include.active == 'demande' %}
+  <li class="active">
+    <a href="#">Demande</a>
+  </li>
+  {% else %}
+  <li>
+    <a href="{{include.type}}-{{include.id}}.demande.html">Demande</a>
+  </li>
+  {% endif %}
 {% endif %}
+
 
 {% if include.type =="CodeSystem" or include.type =="ValueSet"  %}
   {% if include.active == 'tel' %}

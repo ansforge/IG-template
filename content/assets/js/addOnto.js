@@ -302,10 +302,10 @@ $(document).ready(function(){
         $("table.codes tr td:nth-child(6):not(:empty)").parent().children().css("background-color","#E69215");   
     $("table.codes tr  td:contains(Deprecated)").parent().children().css("background-color","#E69215");   
   
-    $("#orig").find("code").css("background-color","#464c6d");
+    $("#orig").find("code").css("background-color","#c7cef1ff");
     $("#orig").find("code").css("color","white");
     $("#orig").find("code").css("font-weight","bolder");
-    $("#orig").find("code").css("font-size","14px");
+    $("#orig").find("code").css("font-size","10px");
         
 
 
