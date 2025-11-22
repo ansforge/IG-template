@@ -211,9 +211,16 @@ $(document).ready(function(){
       if($(this).find("tr").length ==1) {
         $(this).parent().hide();
     }
-        $('<div class="form-group pull-right"> <input type="text"  style="height:auto;font-size:12px" class="search' + indextable +' form-control" placeholder="Recherche">  <span class="counter' + indextable + ' "></span></div>').insertBefore($(this));	
+        $('<div class="form-group pull-right"> <input type="text"  style="height:auto;font-size:12px" class="search' + indextable +' form-control" placeholder="Recherche">  <span class="counter' + indextable + ' "></span></div>').insertBefore($(this));
         firstTr = $(this).find('tr:first').remove()
-        firstTr.find('td').contents().unwrap().wrap('<th>')
+        firstTr.find('td').each(function() {
+            var $td = $(this);
+            var $th = $('<th>').html($td.html());
+            $.each(this.attributes, function() {
+                $th.attr(this.name, this.value);
+            });
+            $td.replaceWith($th);
+        })
         $(this).prepend($('<thead></thead>').append(firstTr))
         $(this).addClass("results"+indextable); 
           $(this).addClass("table-striped");
@@ -254,9 +261,16 @@ $(document).ready(function(){
       if($(this).find("tr").length ==1) {
         $(this).parent().hide();
     }
-        $('<div class="form-group pull-right"> <input type="text"  style="height:auto;font-size:12px" class="search' + indextable +' form-control" placeholder="Recherche">  <span class="counter' + indextable + ' "></span></div>').insertBefore($(this));	
+        $('<div class="form-group pull-right"> <input type="text"  style="height:auto;font-size:12px" class="search' + indextable +' form-control" placeholder="Recherche">  <span class="counter' + indextable + ' "></span></div>').insertBefore($(this));
         firstTr = $(this).find('tr:first').remove()
-        firstTr.find('td').contents().unwrap().wrap('<th>')
+        firstTr.find('td').each(function() {
+            var $td = $(this);
+            var $th = $('<th>').html($td.html());
+            $.each(this.attributes, function() {
+                $th.attr(this.name, this.value);
+            });
+            $td.replaceWith($th);
+        })
         $(this).prepend($('<thead></thead>').append(firstTr))
         $(this).addClass("results"+indextable); 
           $(this).addClass("table-striped");
