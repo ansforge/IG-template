@@ -40,7 +40,17 @@
             out.println("ANS-SYSOUT: mkdirs result=" + result + " exists=" + dir.exists());
           }
         } else {
-          out.println("ANS-SYSOUT: languages.json not found");
+          out.println("ANS-SYSOUT: languages.json not found - dumping ig.* and lang* properties:");
+          var props = project.getProperties();
+          var keys = props.keySet().toArray();
+          java.util.Arrays.sort(keys);
+          for (var i = 0; i < keys.length; i++) {
+            var k = keys[i];
+            var ks = "" + k;
+            if (ks.indexOf("ig.") >= 0 || ks.toLowerCase().indexOf("lang") >= 0 || ks.toLowerCase().indexOf("locale") >= 0) {
+              out.println("ANS-PROP: " + k + " = " + props.get(k));
+            }
+          }
         }
       } catch(e) {
         java.lang.System.out.println("ANS-SYSOUT: ERROR = " + e);
