@@ -7,16 +7,21 @@
     Voir includes/WORKAROUNDS.md pour le contexte.
     À supprimer quand HL7/ig-template-base2 et le publisher corrigent ce comportement.
   -->
-  <target name="onGenerate.createLangIncludeDirs" extensionOf="onGenerate.extend" if="langs">
+  <target name="onGenerate.processIncludes">
+    <copy todir="${dir.temp.includes}">
+      <fileset dir="${dir.template.includes}" includes="*"/>
+    </copy>
     <script language="javascript">
     <![CDATA[
       var langstring = project.getProperty("langs");
-      var tempIncludes = project.getProperty("dir.temp.includes");
-      var langs = langstring.split(";");
-      for (var i = 0; i < langs.length; i++) {
-        if (langs[i] !== "") {
-          var dir = new java.io.File(tempIncludes + "/" + langs[i]);
-          dir.mkdirs();
+      if (langstring) {
+        var tempIncludes = project.getProperty("dir.temp.includes");
+        var langs = langstring.split(";");
+        for (var i = 0; i < langs.length; i++) {
+          if (langs[i] !== "") {
+            var dir = new java.io.File(tempIncludes + "/" + langs[i]);
+            dir.mkdirs();
+          }
         }
       }
     ]]>
