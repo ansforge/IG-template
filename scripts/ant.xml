@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="ANSProcessIg">
+
+  <target name="onLoad"/>
+
   <!--
     Workaround: le publisher Java tente d'écrire _includes/<lang>/toc.xml mais
     ne crée pas le répertoire parent. On le crée ici avant que le publisher
@@ -7,19 +10,16 @@
     Voir includes/WORKAROUNDS.md pour le contexte.
     À supprimer quand HL7/ig-template-base2 et le publisher corrigent ce comportement.
   -->
-  <target name="onGenerate.processIncludes">
-    <copy todir="${dir.temp.includes}">
-      <fileset dir="${dir.template.includes}" includes="*"/>
-    </copy>
+  <target name="onGenerate">
     <script language="javascript">
     <![CDATA[
       var langstring = project.getProperty("langs");
       if (langstring) {
-        var tempIncludes = project.getProperty("dir.temp.includes");
+        var igTemp = project.getProperty("ig.temp");
         var langs = langstring.split(";");
         for (var i = 0; i < langs.length; i++) {
           if (langs[i] !== "") {
-            var dir = new java.io.File(tempIncludes + "/" + langs[i]);
+            var dir = new java.io.File(igTemp + "/_includes/" + langs[i]);
             dir.mkdirs();
           }
         }
@@ -27,4 +27,7 @@
     ]]>
     </script>
   </target>
+
+  <target name="onCheck"/>
+
 </project>
