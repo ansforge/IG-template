@@ -14,37 +14,37 @@
     <echo message="ANS-ECHO: onGenerate.createLangIncludeDirs running"/>
     <script language="javascript">
     <![CDATA[
-      java.lang.System.out.println("ANS-SYSOUT: target script running");
-      var igTemp = project.getProperty("ig.temp");
-      java.lang.System.out.println("ANS-SYSOUT: ig.temp = " + igTemp);
-      project.log("ANS-DEBUG: ig.temp = " + igTemp);
-      var langDataFile = new java.io.File(igTemp + "/_data/languages.json");
-      project.log("ANS-DEBUG: languages.json path = " + langDataFile.getAbsolutePath());
-      project.log("ANS-DEBUG: languages.json exists = " + langDataFile.exists());
-      if (langDataFile.exists()) {
-        var content = new java.lang.String(java.nio.file.Files.readAllBytes(langDataFile.toPath()), "UTF-8");
-        project.log("ANS-DEBUG: languages.json content = " + content);
-        var pattern = java.util.regex.Pattern.compile('"code"\\s*:\\s*"([^"]+)"');
-        var matcher = pattern.matcher(content);
-        while (matcher.find()) {
-          var lang = matcher.group(1);
-          var dir = new java.io.File(igTemp + "/_includes/" + lang);
-          project.log("ANS-DEBUG: creating dir = " + dir.getAbsolutePath());
-          dir.mkdirs();
-          project.log("ANS-DEBUG: dir created, exists = " + dir.exists());
-        }
-      } else {
-        project.log("ANS-DEBUG: languages.json not found, trying to list _data dir");
-        var dataDir = new java.io.File(igTemp + "/_data");
-        project.log("ANS-DEBUG: _data dir exists = " + dataDir.exists());
-        if (dataDir.exists()) {
-          var files = dataDir.listFiles();
-          if (files != null) {
-            for (var i = 0; i < files.length; i++) {
-              project.log("ANS-DEBUG: _data file: " + files[i].getName());
-            }
+      var out = java.lang.System.out;
+      out.println("ANS-SYSOUT: target script running");
+      try {
+        var igTemp = project.getProperty("ig.temp");
+        out.println("ANS-SYSOUT: ig.temp = " + igTemp);
+
+        out.println("ANS-SYSOUT: creating File object for languages.json...");
+        var File = java.io.File;
+        out.println("ANS-SYSOUT: java.io.File = " + File);
+        var langDataFile = new java.io.File(igTemp + "/_data/languages.json");
+        out.println("ANS-SYSOUT: langDataFile created, exists = " + langDataFile.exists());
+
+        if (langDataFile.exists()) {
+          out.println("ANS-SYSOUT: reading languages.json");
+          var content = new java.lang.String(java.nio.file.Files.readAllBytes(langDataFile.toPath()), "UTF-8");
+          out.println("ANS-SYSOUT: content = " + content);
+          var pattern = java.util.regex.Pattern.compile('"code"\\s*:\\s*"([^"]+)"');
+          var matcher = pattern.matcher(content);
+          while (matcher.find()) {
+            var lang = matcher.group(1);
+            var dir = new java.io.File(igTemp + "/_includes/" + lang);
+            out.println("ANS-SYSOUT: mkdirs " + dir.getAbsolutePath());
+            var result = dir.mkdirs();
+            out.println("ANS-SYSOUT: mkdirs result=" + result + " exists=" + dir.exists());
           }
+        } else {
+          out.println("ANS-SYSOUT: languages.json not found");
         }
+      } catch(e) {
+        java.lang.System.out.println("ANS-SYSOUT: ERROR = " + e);
+        java.lang.System.out.println("ANS-SYSOUT: STACK = " + e.stack);
       }
     ]]>
     </script>
