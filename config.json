@@ -1,3 +1,8 @@
 {
-  "script": "scripts/ant-ans.xml"
+  "script": "scripts/ant-ans.xml",
+  "targets": {
+    "onLoad": "onLoad",
+    "onGenerate": "onGenerate",
+    "onCheck": "onCheck"
+  }
 }
