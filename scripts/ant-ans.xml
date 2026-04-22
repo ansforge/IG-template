@@ -11,9 +11,12 @@
     À supprimer quand HL7/ig-template-base2 et le publisher corrigent ce comportement.
   -->
   <target name="onGenerate.createLangIncludeDirs" extensionOf="onGenerate.extend">
+    <echo message="ANS-ECHO: onGenerate.createLangIncludeDirs running"/>
     <script language="javascript">
     <![CDATA[
+      java.lang.System.out.println("ANS-SYSOUT: target script running");
       var igTemp = project.getProperty("ig.temp");
+      java.lang.System.out.println("ANS-SYSOUT: ig.temp = " + igTemp);
       project.log("ANS-DEBUG: ig.temp = " + igTemp);
       var langDataFile = new java.io.File(igTemp + "/_data/languages.json");
       project.log("ANS-DEBUG: languages.json path = " + langDataFile.getAbsolutePath());
