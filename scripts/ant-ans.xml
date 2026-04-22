@@ -10,15 +10,18 @@
     Voir includes/WORKAROUNDS.md pour le contexte.
     À supprimer quand HL7/ig-template-base2 et le publisher corrigent ce comportement.
   -->
-  <target name="onGenerate.createLangIncludeDirs" extensionOf="onGenerate.extend" if="langs">
+  <target name="onGenerate.createLangIncludeDirs" extensionOf="onGenerate.extend">
     <script language="javascript">
     <![CDATA[
-      var langstring = project.getProperty("langs");
       var igTemp = project.getProperty("ig.temp");
-      var langs = langstring.split(";");
-      for (var i = 0; i < langs.length; i++) {
-        if (langs[i] !== "") {
-          var dir = new java.io.File(igTemp + "/_includes/" + langs[i]);
+      var langDataFile = new java.io.File(igTemp + "/_data/languages.json");
+      if (langDataFile.exists()) {
+        var content = new java.lang.String(java.nio.file.Files.readAllBytes(langDataFile.toPath()), "UTF-8");
+        var pattern = java.util.regex.Pattern.compile('"code"\\s*:\\s*"([^"]+)"');
+        var matcher = pattern.matcher(content);
+        while (matcher.find()) {
+          var lang = matcher.group(1);
+          var dir = new java.io.File(igTemp + "/_includes/" + lang);
           dir.mkdirs();
         }
       }
