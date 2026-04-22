@@ -14,15 +14,33 @@
     <script language="javascript">
     <![CDATA[
       var igTemp = project.getProperty("ig.temp");
+      project.log("ANS-DEBUG: ig.temp = " + igTemp);
       var langDataFile = new java.io.File(igTemp + "/_data/languages.json");
+      project.log("ANS-DEBUG: languages.json path = " + langDataFile.getAbsolutePath());
+      project.log("ANS-DEBUG: languages.json exists = " + langDataFile.exists());
       if (langDataFile.exists()) {
         var content = new java.lang.String(java.nio.file.Files.readAllBytes(langDataFile.toPath()), "UTF-8");
+        project.log("ANS-DEBUG: languages.json content = " + content);
         var pattern = java.util.regex.Pattern.compile('"code"\\s*:\\s*"([^"]+)"');
         var matcher = pattern.matcher(content);
         while (matcher.find()) {
           var lang = matcher.group(1);
           var dir = new java.io.File(igTemp + "/_includes/" + lang);
+          project.log("ANS-DEBUG: creating dir = " + dir.getAbsolutePath());
           dir.mkdirs();
+          project.log("ANS-DEBUG: dir created, exists = " + dir.exists());
+        }
+      } else {
+        project.log("ANS-DEBUG: languages.json not found, trying to list _data dir");
+        var dataDir = new java.io.File(igTemp + "/_data");
+        project.log("ANS-DEBUG: _data dir exists = " + dataDir.exists());
+        if (dataDir.exists()) {
+          var files = dataDir.listFiles();
+          if (files != null) {
+            for (var i = 0; i < files.length; i++) {
+              project.log("ANS-DEBUG: _data file: " + files[i].getName());
+            }
+          }
         }
       }
     ]]>
