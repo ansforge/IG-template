@@ -11,50 +11,34 @@
     À supprimer quand HL7/ig-template-base2 et le publisher corrigent ce comportement.
   -->
   <target name="onGenerate.createLangIncludeDirs" extensionOf="onGenerate.extend">
-    <echo message="ANS-ECHO: onGenerate.createLangIncludeDirs running"/>
     <script language="javascript">
     <![CDATA[
-      var out = java.lang.System.out;
-      out.println("ANS-SYSOUT: target script running");
       try {
         var igTemp = project.getProperty("ig.temp");
-        out.println("ANS-SYSOUT: ig.temp = " + igTemp);
-
-        out.println("ANS-SYSOUT: creating File object for languages.json...");
-        var File = java.io.File;
-        out.println("ANS-SYSOUT: java.io.File = " + File);
-        var langDataFile = new java.io.File(igTemp + "/_data/languages.json");
-        out.println("ANS-SYSOUT: langDataFile created, exists = " + langDataFile.exists());
-
-        if (langDataFile.exists()) {
-          out.println("ANS-SYSOUT: reading languages.json");
-          var content = new java.lang.String(java.nio.file.Files.readAllBytes(langDataFile.toPath()), "UTF-8");
-          out.println("ANS-SYSOUT: content = " + content);
-          var pattern = java.util.regex.Pattern.compile('"code"\\s*:\\s*"([^"]+)"');
-          var matcher = pattern.matcher(content);
-          while (matcher.find()) {
-            var lang = matcher.group(1);
-            var dir = new java.io.File(igTemp + "/_includes/" + lang);
-            out.println("ANS-SYSOUT: mkdirs " + dir.getAbsolutePath());
-            var result = dir.mkdirs();
-            out.println("ANS-SYSOUT: mkdirs result=" + result + " exists=" + dir.exists());
-          }
-        } else {
-          out.println("ANS-SYSOUT: languages.json not found - dumping ig.* and lang* properties:");
-          var props = project.getProperties();
-          var keys = props.keySet().toArray();
-          java.util.Arrays.sort(keys);
-          for (var i = 0; i < keys.length; i++) {
-            var k = keys[i];
-            var ks = "" + k;
-            if (ks.indexOf("ig.") >= 0 || ks.toLowerCase().indexOf("lang") >= 0 || ks.toLowerCase().indexOf("locale") >= 0) {
-              out.println("ANS-PROP: " + k + " = " + props.get(k));
+        var igSourceXml = project.getProperty("onGenerate.ig.source") + "xml";
+        var xmlFile = new java.io.File(igSourceXml);
+        if (xmlFile.exists()) {
+          var dbf = javax.xml.parsers.DocumentBuilderFactory.newInstance();
+          dbf.setNamespaceAware(true);
+          var db = dbf.newDocumentBuilder();
+          var doc = db.parse(xmlFile);
+          var params = doc.getElementsByTagNameNS("http://hl7.org/fhir", "parameter");
+          for (var i = 0; i < params.getLength(); i++) {
+            var param = params.item(i);
+            var codeElems = param.getElementsByTagNameNS("http://hl7.org/fhir", "code");
+            var valueElems = param.getElementsByTagNameNS("http://hl7.org/fhir", "value");
+            if (codeElems.getLength() > 0 && valueElems.getLength() > 0) {
+              var code = codeElems.item(0).getAttribute("value");
+              if (code === "i18n-default-lang") {
+                var lang = valueElems.item(0).getAttribute("value");
+                var dir = new java.io.File(igTemp + "/_includes/" + lang);
+                dir.mkdirs();
+              }
             }
           }
         }
       } catch(e) {
-        java.lang.System.out.println("ANS-SYSOUT: ERROR = " + e);
-        java.lang.System.out.println("ANS-SYSOUT: STACK = " + e.stack);
+        project.log("ANS: error creating lang include dirs: " + e);
       }
     ]]>
     </script>
