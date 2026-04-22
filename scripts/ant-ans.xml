@@ -18,23 +18,13 @@
         var igSourceXml = project.getProperty("onGenerate.ig.source") + "xml";
         var xmlFile = new java.io.File(igSourceXml);
         if (xmlFile.exists()) {
-          var dbf = javax.xml.parsers.DocumentBuilderFactory.newInstance();
-          dbf.setNamespaceAware(true);
-          var db = dbf.newDocumentBuilder();
-          var doc = db.parse(xmlFile);
-          var params = doc.getElementsByTagNameNS("http://hl7.org/fhir", "parameter");
-          for (var i = 0; i < params.getLength(); i++) {
-            var param = params.item(i);
-            var codeElems = param.getElementsByTagNameNS("http://hl7.org/fhir", "code");
-            var valueElems = param.getElementsByTagNameNS("http://hl7.org/fhir", "value");
-            if (codeElems.getLength() > 0 && valueElems.getLength() > 0) {
-              var code = codeElems.item(0).getAttribute("value");
-              if (code === "i18n-default-lang") {
-                var lang = valueElems.item(0).getAttribute("value");
-                var dir = new java.io.File(igTemp + "/_includes/" + lang);
-                dir.mkdirs();
-              }
-            }
+          var content = new java.lang.String(java.nio.file.Files.readAllBytes(xmlFile.toPath()), "UTF-8");
+          var pattern = java.util.regex.Pattern.compile('<code value="i18n-default-lang"/>\\s*<value value="([^"]+)"');
+          var matcher = pattern.matcher(content);
+          while (matcher.find()) {
+            var lang = matcher.group(1);
+            var dir = new java.io.File(igTemp + "/_includes/" + lang);
+            dir.mkdirs();
           }
         }
       } catch(e) {
