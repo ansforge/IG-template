@@ -20,7 +20,7 @@ $(document).ready(function(){
         .done((data) => {
     
           if (data.items != null) {   
-            $('#divDemande').html('<div id="demande"><table class="grid table table-bordered"> <thead> <tr> <td> </td> <td>Titre</td>        <td>Auteur</td>        <td>Date</td>    </tr></thead>    <tbody id="idDemande"> </tbody> </table>  </div>	      	      ');
+            $('#divDemande').html('<div id="demande"><table class="grid table table-bordered"> <thead> <tr> <td> </td> <td>Titre</td>        <td>Auteur</td>        <td>Date</td>    </tr></thead>    <tbody id="idDemande"> </tbody> </table>  </div>                ');
 
             $.each(data.items, function (i, obj) { 
             var content = '<tr>' ;
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 
     if ( $("#divHistoire").length ) {
-    $('#divHistoire').html('<div id="histoire"><table class="grid table table-bordered"> <thead> <tr> <td>Histoire</td> <td>Version</td>        <td>Demande</td>       <td>Resultat</td> <td>Date</td>    </tr></thead>    <tbody id="idHistoire"> </tbody> </table>  </div>	      	      ');
+    $('#divHistoire').html('<div id="histoire"><table class="grid table table-bordered"> <thead> <tr> <td>Histoire</td> <td>Version</td>        <td>Demande</td>       <td>Resultat</td> <td>Date</td>    </tr></thead>    <tbody id="idHistoire"> </tbody> </table>  </div>                  ');
     
     
     $.ajax({
@@ -75,7 +75,7 @@ $(document).ready(function(){
             $('#idHistoire').append(content);
             
             
-            content ='<tr><td colspan="5"><table style="font-size:10px;width:100%" class="table-striped"><tr><tr><td  style="background-color: #697097;color:white">Operation</td><td  style="background-color: #697097;color:white">Chemin</td  style="background-color: #697097;color:white"><td style="background-color: #697097;color:white">Nom</td><td  style="background-color: #697097;color:white">Valeur</td> <td  style="background-color: #697097;color:white">Précédent</td></tr><tbody id="histoire'+ obj.resource.meta.versionId + '"></tbody></tr></table></td></tr>';		
+            content ='<tr><td colspan="5"><table style="font-size:10px;width:100%" class="table-striped"><tr><tr><td  style="background-color: #697097;color:white">Operation</td><td  style="background-color: #697097;color:white">Chemin</td  style="background-color: #697097;color:white"><td style="background-color: #697097;color:white">Nom</td><td  style="background-color: #697097;color:white">Valeur</td> <td  style="background-color: #697097;color:white">Précédent</td></tr><tbody id="histoire'+ obj.resource.meta.versionId + '"></tbody></tr></table></td></tr>';      
             console.log("https://smt.esante.gouv.fr/fhir/" + obj.id  +  "/$diff");   
             $('#idHistoire').append(content);          
                 $.ajax({
@@ -110,7 +110,7 @@ $(document).ready(function(){
     
                     });
                  }   
-                });		
+                });     
     
             });
     
@@ -155,7 +155,7 @@ $(document).ready(function(){
         });
     
         
-         $(window).scroll(function () {
+         $(globalThis).scroll(function () {
                 if ($(this).scrollTop() > 50) {
                     $('#back-to-top').fadeIn();
                 } else {
@@ -211,7 +211,7 @@ $(document).ready(function(){
       if($(this).find("tr").length ==1) {
         $(this).parent().hide();
     }
-        $('<div class="form-group pull-right"> <input type="text"  style="height:auto;font-size:12px" class="search' + indextable +' form-control" placeholder="Recherche">  <span class="counter' + indextable + ' "></span></div>').insertBefore($(this));	
+        $('<div class="form-group pull-right"> <input type="text"  style="height:auto;font-size:12px" class="search' + indextable +' form-control" placeholder="Recherche">  <span class="counter' + indextable + ' "></span></div>').insertBefore($(this));    
         firstTr = $(this).find('tr:first').remove()
         firstTr.find('td').contents().unwrap().wrap('<th>')
         $(this).prepend($('<thead></thead>').append(firstTr))
@@ -221,10 +221,10 @@ $(document).ready(function(){
       $(".search"+indextable).keyup(function () {
         var searchTerm = $(".search"+indextable).val();
         var listItem = $('.results'+indextable +' tbody').children('tr');
-        var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+        var searchSplit = searchTerm.replaceAll(' ', "'):containsi('")
         
       $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
-            return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+            return (elem.textContent || elem.innerText || '').toLowerCase().includes((match[3] || "").toLowerCase());
         }
       });
         
@@ -254,7 +254,7 @@ $(document).ready(function(){
       if($(this).find("tr").length ==1) {
         $(this).parent().hide();
     }
-        $('<div class="form-group pull-right"> <input type="text"  style="height:auto;font-size:12px" class="search' + indextable +' form-control" placeholder="Recherche">  <span class="counter' + indextable + ' "></span></div>').insertBefore($(this));	
+        $('<div class="form-group pull-right"> <input type="text"  style="height:auto;font-size:12px" class="search' + indextable +' form-control" placeholder="Recherche">  <span class="counter' + indextable + ' "></span></div>').insertBefore($(this));    
         firstTr = $(this).find('tr:first').remove()
         firstTr.find('td').contents().unwrap().wrap('<th>')
         $(this).prepend($('<thead></thead>').append(firstTr))
@@ -264,10 +264,10 @@ $(document).ready(function(){
       $(".search"+indextable).keyup(function () {
         var searchTerm = $(".search"+indextable).val();
         var listItem = $('.results'+indextable +' tbody').children('tr');
-        var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+        var searchSplit = searchTerm.replaceAll(' ', "'):containsi('")
         
       $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
-            return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+            return (elem.textContent || elem.innerText || '').toLowerCase().includes((match[3] || "").toLowerCase());
         }
       });
         
