@@ -141,7 +141,7 @@ $(document).ready(function(){
     
         
         $("#terminologit-search-content-valueset-cld").addClass("accordion-group");
-        //$("#terminologit-search-content-valueset-cld").attr("id","logical-definition-accordion-group");
+        
         var logicalDefHeading = $("#terminologit-search-content-valueset-cld").find("#logical-definition-cld");
         $(logicalDefHeading).addClass("accordion-heading");
         $(logicalDefHeading).append('<a class="accordion-toggle" data-toggle="collapse" href="#logical-definition-cld-collapse"><i class="gg-chevron-down"></i></a>');

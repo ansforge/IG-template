@@ -1,5 +1,6 @@
+var currentTabIndex;
 try {
-  var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
+  currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
 } catch(exception) {
 }
 

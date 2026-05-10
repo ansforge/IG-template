@@ -1,5 +1,5 @@
 $(document).ready(function(){
-     $(window).scroll(function () {
+     $(globalThis).scroll(function () {
             if ($(this).scrollTop() > 50) {
                 $('#back-to-top').fadeIn();
             } else {
