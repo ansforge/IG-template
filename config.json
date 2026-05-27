@@ -1,5 +1,5 @@
 {
-  "script": "scripts/ant-ans.xml",
+  "script": "scripts/ant.xml",
   "otherScripts": [],
   "multilanguage-format": true,
   "targets": {
