@@ -47,9 +47,12 @@ pre {
 .navbar .container,
 .navbar .container-fluid,
 .navbar .container-xs {
+    flex-wrap: nowrap;
+}
 
-    /*display: table;*/
-
+/* Keep language selector at the right by letting the menu grow to fill space */
+.navbar .nav-collapse {
+    flex: 1 1 auto;
 }
 
 body {
