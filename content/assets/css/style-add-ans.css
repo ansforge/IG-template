@@ -50,9 +50,11 @@ pre {
     flex-wrap: nowrap;
 }
 
-/* Keep language selector at the right by letting the menu grow to fill space */
-.navbar .nav-collapse {
-    flex: 1 1 auto;
+/* Push language selector to the right; flow-root contains its floated children */
+#language {
+    margin-left: auto;
+    display: flow-root;
+    flex-shrink: 0;
 }
 
 body {
