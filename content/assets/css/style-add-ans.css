@@ -36,25 +36,8 @@ pre {
      display: unset;
 }
 
-.navbar-nav {
-    flex-direction: unset;
-}
-
 .navbar {
 	background-color : #464c6d;
-}
-.navbar,
-.navbar .container,
-.navbar .container-fluid,
-.navbar .container-xs {
-    flex-wrap: nowrap;
-}
-
-/* Push language selector to the right; flow-root contains its floated children */
-#language {
-    margin-left: auto;
-    display: flow-root;
-    flex-shrink: 0;
 }
 
 body {
