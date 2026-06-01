@@ -254,10 +254,13 @@ function highlightDeprecatedRows() {
 // ============================================================================
 // MAIN INITIALIZATION
 // ============================================================================
-
-var url = new URL($('#newissue').attr('href'));
-url.searchParams.set('title', $('#idValue').val());
-$('#newissue').attr('href', url);
+try {
+    var url = new URL($('#newissue').attr('href'));
+    url.searchParams.set('title', $('#idValue').val());
+    $('#newissue').attr('href', url);
+} catch (e) {
+    console.error('Erreur lors de la mise à jour du lien :', e);
+}
 
 $(document).ready(function(){
 
