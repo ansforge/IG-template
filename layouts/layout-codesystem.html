@@ -29,7 +29,7 @@
   <p>{{site.data.stringsBase['{{[lang]}}']['CodeSystemValuesets']}}</p>
 
   {% include {{[type]}}-{{[id]}}-xref{{[langsuffix]}}.xhtml %}
-
+<div id="orig">  
   {% include {{[type]}}-{{[id]}}-content{{[langsuffix]}}.xhtml %}
 
   <hr/>
@@ -45,6 +45,6 @@
   {% include fragment-notes.html type='{{[type]}}' id='{{[id]}}' lang="{{[lang]}}" %}
 
   {% include {{[type]}}-{{[id]}}-history{{[langsuffix]}}.xhtml %}
-
+</div>
 </div>
 {% include fragment-pageend.html lang="{{[lang]}}" %}
