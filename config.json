@@ -52,6 +52,10 @@
       "isHistory": true
     },
     {
+      "name": "telechargement",
+      "description": " telechargement"
+    },    
+    {
       "name": "histoire",
       "description": "histoire"
     }  ,
@@ -196,6 +200,9 @@
       "template-format": "template/layouts/layout-instance-format.html",
       "template-testing": "template/layouts/layout-canonical-testing.html",
       "template-change-history": "template/layouts/layout-changehistory.html",
+      "template-telechargement": "template/layouts/layout-telechargement.html",
+      "template-histoire": "template/layouts/layout-histoire.html",            
+      "template-demande": "template/layouts/layout-demande.html",            
       "base": "{{[type]}}-{{[id]}}.html",
       "format": "{{[type]}}-{{[id]}}.{{[fmt]}}.html",
       "testing": "{{[type]}}-{{[id]}}-testing.html",
@@ -229,6 +236,9 @@
       "template-format": "template/layouts/layout-instance-format.html",
       "template-testing": "template/layouts/layout-canonical-testing.html",
       "template-change-history": "template/layouts/layout-changehistory.html",
+      "template-telechargement": "template/layouts/layout-telechargement.html",
+      "template-histoire": "template/layouts/layout-histoire.html",            
+      "template-demande": "template/layouts/layout-demande.html",            
       "base": "{{[type]}}-{{[id]}}.html",
       "format": "{{[type]}}-{{[id]}}.{{[fmt]}}.html",
       "testing": "{{[type]}}-{{[id]}}-testing.html",
