@@ -28,7 +28,9 @@
 
   <!-- insert intro if present -->
   {% include fragment-intro.html type='{{[type]}}' id='{{[id]}}' lang="{{[lang]}}" %}
-
+  <input type="hidden" id="idValue" value="{{[id]}}"/>
+  {% include fragment-onto.html type='{{[type]}}' id='{{[id]}}' %}
+<div id="orig">  
   <a name="definition"> </a>
 
 <!-- Content Logical Definition heading in the fragment -->
@@ -49,7 +51,7 @@
   <h4>{{site.data.stringsBase['{{[lang]}}']['Contained']}}</h4>
   {% include {{[type]}}-{{[id]}}-contained-index{{[langsuffix]}}.xhtml %}
   {% endif %}
-
+</div>
   <!-- insert notes if present -->
   {% include fragment-notes.html type='{{[type]}}' id='{{[id]}}' lang="{{[lang]}}" %}
 
