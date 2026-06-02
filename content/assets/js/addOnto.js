@@ -404,7 +404,8 @@ $(document).ready(function(){
     // ========================================================================
     // ValueSet Search
     // ========================================================================
-    $('#ontoSearch').on("change", function() {
+    $('#ontoSearch').on("keyup", function(e) {
+        if (e.key !== "Enter") return;
         addLoadingSpinner('#resultOnto');
         $('#counterOnto').html("");
 

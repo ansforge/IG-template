@@ -1,14 +1,12 @@
 ---
 ---
-<!-- layouts\layout-demande.html -->
-<!-- get modelType -->
-
-
-{% include fragment-pagebegin.html %}
+{% assign localPage = page.path | split: "/" | last %}
+{% include fragment-modelType.html type='{{[type]}}' id='{{[id]}}' lang="{{[lang]}}" %}
+{% include fragment-pagebegin.html lang='{{[lang]}}' lang="{{[lang]}}" %}
 
 <div style="counter-reset: section 10" class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
-  {% include fragment-base-navtabs.html type='{{[type]}}' id='{{[id]}}' active='demande' %}
+  {% include fragment-base-navtabs.html type='{{[type]}}' id='{{[id]}}' active='demande' lang="{{[lang]}}" %}
 
   <a name="root"> </a>
   <h2 id="root">{{[type]}}: {{[title]}} - Demande</h2>
@@ -20,5 +18,4 @@
   </div>	
 
 </div>
-{% assign includetabscripts = 'true' %}
-{% include fragment-pageend.html %}
+{% include fragment-pageend.html lang="{{[lang]}}" %}

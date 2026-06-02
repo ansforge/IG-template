@@ -232,9 +232,9 @@ h6 {
     margin-bottom: 1.5rem;
     margin-top: 0;
 }
-/*p {
-    margin:  0 0 10px;
-}*/
+p {
+    margin:  0 0 5px;
+}
 abbr[data-original-title],
 abbr[title] {
     border-bottom: 0;
