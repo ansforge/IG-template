@@ -1,92 +1,11 @@
 /* =========================
    TABLEAUX RESPONSIVES
    ========================= */
-
-.table-wrap {
+.table-query {
     width: 100%;
     max-width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
-}
-
-table,
-table.grid,
-table.codes,
-table.list,
-table.dict {
-    width: 100%;
-    max-width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-thead th {
-    background: #f6f8fa;
-    font-weight: 600;
-    text-align: center;
-}
-
-th,
-td,
-table.grid th,
-table.grid td,
-table.codes th,
-table.codes td {
-    border: 1px solid #d0d7de;
-    padding: 4px 6px;
-    vertical-align: top;
-
-    /* retour à la ligne */
-    white-space: normal;
-    overflow-wrap: anywhere;
     word-break: break-word;
-    hyphens: auto;
-
-    /* suppression de la troncature */
-    overflow: visible;
-    text-overflow: unset;
-}
-
-/* chemins FHIR/CDA très longs */
-td code,
-td pre,
-td span {
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-}
-
-/* largeur des colonnes équilibrée */
-th {
-    font-weight: 600;
-}
-
-/* responsive mobile */
-@media (max-width: 768px) {
-
-    th,
-    td {
-        font-size: 12px;
-        padding: 3px 5px;
-    }
-}
-
-table.codes {
     table-layout: fixed;
-}
-
-table.codes th:nth-child(1),
-table.codes td:nth-child(1) {
-    width: 33%;
-}
-
-table.codes th:nth-child(2),
-table.codes td:nth-child(2) {
-    width: 33%;
-}
-
-table.codes th:nth-child(3),
-table.codes td:nth-child(3) {
-    width: 34%;
 }
