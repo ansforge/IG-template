@@ -2359,6 +2359,8 @@ pre code {
     border-top: 0.1rem solid var(--border-color, var(--gray-400, #dee0ea));
     padding: 1.8rem;
     vertical-align: top;
+    word-break: break-word;
+
 }
 
 .table thead th {
@@ -6491,6 +6493,7 @@ a.btn--style1.btn--white {
     border-bottom: 0;
     border-right: 0;
     padding: 1.8rem 3rem;
+    word-break: break-word;
 }
 
 .table td:first-child,
