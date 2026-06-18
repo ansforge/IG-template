@@ -4147,8 +4147,6 @@ textarea.form-control {
     justify-content: space-between;
 }
 
-/* Bootstrap 4 flex navbar supprimé : incompatible avec le HTML Bootstrap 3 du template HL7 */
-
 .navbar-brand {
     display: inline-block;
     font-size: 2rem;
