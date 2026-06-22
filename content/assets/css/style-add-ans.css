@@ -1,4 +1,6 @@
-p, li, td {
+p,
+li,
+td {
     color: #343548;
 }
 
@@ -10,7 +12,7 @@ pre {
     background-color: white;
 }
 
-#segment-footer > .container {
+#segment-footer>.container {
     background-color: #464c6d;
 }
 
@@ -21,11 +23,11 @@ pre {
 }
 
 #segment-footer {
-     background: none;
+    background: none;
 }
 
 
-#hl7-search-lnk >img {
+#hl7-search-lnk>img {
     height: 40px;
 }
 
@@ -33,7 +35,7 @@ pre {
 .breadcrumb,
 .breadcrumb-item {
 
-     display: unset;
+    display: unset;
 }
 
 .navbar-nav {
@@ -41,8 +43,9 @@ pre {
 }
 
 .navbar {
-	background-color : #464c6d;
+    background-color: #464c6d;
 }
+
 .navbar,
 .navbar .container,
 .navbar .container-fluid,
@@ -65,16 +68,23 @@ ul {
 }
 
 
-.dropdown-toggle:after{
-    content:  none;
+.dropdown-toggle:after {
+    content: none;
 
 }
+
 /*
 a, article, aside, audio, body, div, em, fieldset, figcaption, figure, footer, h1, h2, h3, h4, h5, h6, header, html, img, label, li, menu, nav, ol, output, p, section, span, table, tbody, td, tfoot, th, thead, tr, ul, video {
     -webkit-padding-start : unset;
     padding : unset;
 }*/
 
-#content > .inner-wrapper, .container > .row > .inner-wrapper {
-margin : 10px;
+#content>.inner-wrapper,
+.container>.row>.inner-wrapper {
+    margin: 10px;
+}
+
+.table td,
+.table th {
+    word-break: break-word;
 }
