@@ -1,4 +1,6 @@
-p, li, td {
+p,
+li,
+td {
     color: #343548;
 }
 
@@ -10,7 +12,7 @@ pre {
     background-color: white;
 }
 
-#segment-footer > .container {
+#segment-footer>.container {
     background-color: #464c6d;
 }
 
@@ -21,11 +23,11 @@ pre {
 }
 
 #segment-footer {
-     background: none;
+    background: none;
 }
 
 
-#hl7-search-lnk >img {
+#hl7-search-lnk>img {
     height: 40px;
 }
 
@@ -33,11 +35,11 @@ pre {
 .breadcrumb,
 .breadcrumb-item {
 
-     display: unset;
+    display: unset;
 }
 
 .navbar {
-	background-color : #464c6d;
+    background-color: #464c6d;
 }
 
 body {
@@ -53,11 +55,17 @@ ul {
 }
 
 
-.dropdown-toggle:after{
-    content:  none;
+.dropdown-toggle:after {
+    content: none;
 
 }
 
-#content > .inner-wrapper, .container > .row > .inner-wrapper {
-margin : 10px;
+#content>.inner-wrapper,
+.container>.row>.inner-wrapper {
+    margin: 10px;
+}
+
+.table td,
+.table th {
+    word-break: break-word;
 }
