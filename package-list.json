@@ -17,7 +17,7 @@
       "status" : "release",
       "sequence" : "Publications",
       "fhirversion" : "4.0.1",
-      "desc" : "Upgrade for dependency on fhir.base.template",
+      "desc" : "Upgrade for dependency on template base 2",
       "date" : "2026-07-01",
       "current" : true
     },
