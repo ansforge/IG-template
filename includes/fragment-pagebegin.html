@@ -30,6 +30,7 @@
     {% include fragment-css.html lang=include.lang %}
 
     <script type="text/javascript">
+{% raw %}
 let fhirTableLoading = false;
 
 function getCollapsed(store, row) {
@@ -128,6 +129,7 @@ function fhirTableInit(src) {
   }
   fhirTableLoading = false;
 }
+{% endraw %}
 </script>
     <script type="text/javascript" src="{{site.data.info.assets}}assets/js/direction-management.js"> </script>
 
