@@ -1,5 +1,12 @@
 {
+  "script": "scripts/ant.xml",
+  "otherScripts": [],
   "multilanguage-format": true,
+  "targets": {
+    "onLoad": "onLoad",
+    "onGenerate": "onGenerate",
+    "onCheck": "onCheck"
+  },
   "template-parameters": [
     "copyrightyear",
     "excludelogbinaryformat",
