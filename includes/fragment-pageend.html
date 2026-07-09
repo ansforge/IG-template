@@ -7,30 +7,6 @@
   <script type="text/javascript" src="{{site.data.info.assets}}assets/js/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="{{site.data.info.assets}}assets/js/flags.js"> </script>
 {% if includetabscripts %}
-  <script type="text/javascript">
-{% raw %}
-try {
-  var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
-} catch(exception) {
-}
-
-if (!currentTabIndex)
-  currentTabIndex = '0';
-
-$( '#tabs' ).tabs({
-  active: currentTabIndex,
-  activate: function( event, ui ) {
-    var active = $('.selector').tabs('option', 'active');
-    currentTabIndex = ui.newTab.index();
-    document.activeElement.blur();
-    try {
-      sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
-    } catch(exception) {
-    }
-  }
-});
-{% endraw %}
-</script>
 {% endif %}
   <script type="text/javascript" src="{{site.data.info.assets}}assets/js/window-hash.js"> </script>
 {% if site.data.info.togglechanges == 'y' %}
